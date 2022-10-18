@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Лабораторная 1</title>
+        <meta charset="utf-8">
+        <style>
+            th {
+                font: monospace;
+                font-size: large;
+                color: #005552;
+            }
+
+            .inp {
+                margin: 5px;
+            }
+
+            body {
+                font-family: Arial, Helvetica, sans-serif;
+            }
+
+            table, th, td {
+                border: 1px dotted;
+            }
+
+            td span{                    /*потомки*/
+                color: crimson;
+            }
+
+            div#result {
+                align-self: auto;
+                overflow: auto;
+                max-height: 400px;
+            }
+
+            div > table{                /*дочерние*/
+                width: 100%;
+            }
+
+            td#result {
+                 vertical-align: top;
+                 width: 40%;
+            }
+
+            button.button {
+                background: rgb(212, 164, 164);
+                border: 1px dotted red;
+            }
+
+            button:hover {
+                transform: scale(0.9);
+            }
+        </style>
+    </head>
+    <body>
+        <table width="100%" cellpadding="10" cellspacing="0">
+            <th colspan="3">
+                Гараев Раиль Фаннурович <br>
+                Группа P32111 <br>
+                Вариант 1303
+            </th>
+            <tr>
+                <td colspan="2">
+                    <img src="img/areas.png" alt="График">
+                </td>
+                <td rowspan="0" id="result">
+                    <div id="result">
+                        <table class="results">
+                            <tr>
+                                <td>X</td>
+                                <td>Y</td>
+                                <td>R</td>
+                                <td>Попадание</td>
+                                <td>Время</td>
+                                <td>Время исполнения скрипта</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+            <form method="get" class="formWithValidation">
+                <tr>
+                        <td>Выберите X:</td>
+                        <td>
+                            <button class="x button inp" value="-5" type="button">-5</button>
+                            <button class="x button inp" value="-4" type="button">-4</button>
+                            <button class="x button inp" value="-3" type="button">-3</button>
+                            <button class="x button inp" value="-2" type="button">-2</button>
+                            <button class="x button inp" value="-1" type="button">-1</button>
+                            <button class="x button inp" value="0" type="button">0</button>
+                            <button class="x button inp" value="1" type="button">1</button>
+                            <button class="x button inp" value="2" type="button">2</button>
+                            <button class="x button inp" value="3" type="button">3</button>
+                            <span class="error x"></span>
+                        </td>
+                </tr>
+                <tr>
+                    <td>Введите Y:</td>
+                    <td>
+                        <input class="y  inp" type="text" placeholder="От -3 до 5">
+                        <span class="error y"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td>Выберите R:</td>
+                    <td>
+                        <button class="r button inp" value="1" type="button">1</button>
+                        <button class="r button inp" value="1.5" type="button">1.5</button>
+                        <button class="r button inp" value="2" type="button">2</button>
+                        <button class="r button inp" value="2.5" type="button">2.5</button>
+                        <button class="r button inp" value="3" type="button">3</button>
+                        <span class="error r"></span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="2">
+                        <button class="submitBtn">Проверить попадание в область</button>
+                    </td>
+                </tr>
+            </form>
+        </table>
+    <script src="validation.js"></script>
+    </body>
+</html>
